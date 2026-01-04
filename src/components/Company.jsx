@@ -84,18 +84,20 @@ const Company = () => {
                     </div>
                     {/* Visual element or logo placeholder */}
                     <div className="about-logo" style={{
-                        background: '#fff',
-                        padding: '2rem',
-                        borderRadius: '12px',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                        padding: '1rem'
                     }}>
                         <img
-                            src="/assets/logos/coded_house_horizontal_logo.jpg"
+                            src="/assets/logos/coded_house_png_vertical.png"
                             alt="Coded House"
-                            style={{ maxWidth: '250px', height: 'auto', display: 'block' }}
+                            className="company-logo-img"
+                            style={{
+                                width: 'auto',
+                                display: 'block',
+                                filter: 'sepia(100%) saturate(1000%) hue-rotate(5deg) brightness(1.1)'
+                            }}
                         />
                     </div>
                 </section>
@@ -154,6 +156,7 @@ const Company = () => {
                     .about-logo { width: 100%; display: flex; justify-content: center; }
                     .team-grid { display: grid; grid-template-columns: 1fr; }
                     .company-container { padding-left: 1rem; padding-right: 1rem; }
+                    .company-logo-img { height: 200px; }
                     
                     @media (min-width: 768px) {
                         .about-section { flex-direction: row; gap: 3rem; padding: 3rem !important; margin-bottom: 5rem !important; }
@@ -161,10 +164,21 @@ const Company = () => {
                         .team-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
                         .company-container { padding-left: 0; padding-right: 0; }
                     }
+
+                    @media (max-width: 767px) {
+                        .about-section {
+                            background: #0f172a !important;
+                            padding: 2.5rem !important;
+                        }
+                        .company-logo-img {
+                            height: 120px;
+                        }
+                    }
                 `}</style>
             </div>
         </div>
     );
 };
+
 
 export default Company;

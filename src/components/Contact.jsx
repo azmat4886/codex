@@ -12,7 +12,7 @@ const Contact = () => {
                     </p>
                 </div>
 
-                <div className="glass-card" style={{ maxWidth: '600px', margin: '0 auto', padding: '3rem' }}>
+                <div className="glass-card contact-card" style={{ maxWidth: '600px', margin: '0 auto' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -55,6 +55,20 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                .contact-card {
+                    padding: 3rem;
+                }
+                @media (max-width: 768px) {
+                    .contact-card {
+                        padding: 1.5rem;
+                    }
+                    h1 {
+                        font-size: 2.5rem !important;
+                    }
+                }
+            `}</style>
         </div>
     );
 };

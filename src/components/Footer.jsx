@@ -7,15 +7,20 @@ const Footer = () => {
     return (
         <footer style={{ backgroundColor: '#02040a', borderTop: '1px solid var(--color-border)', padding: '5rem 0 2rem' }}>
             <div className="container">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem', marginBottom: '4rem' }}>
+
+                <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '4rem', marginBottom: '4rem' }}>
 
                     {/* Brand Col */}
                     <div style={{ maxWidth: '300px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
                             <img
-                                src="/assets/logos/codex_round_logo.jpeg"
+                                src="/assets/logos/coded_house_png_vertical.png"
                                 alt="CodeX"
-                                style={{ width: '24px', height: '24px', borderRadius: '50%' }}
+                                style={{
+                                    height: '50px',
+                                    width: 'auto',
+                                    filter: 'sepia(100%) saturate(1000%) hue-rotate(5deg) brightness(1.1)'
+                                }}
                             />
                             <span style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: 'var(--font-serif)' }}>CodeX</span>
                         </div>
@@ -53,14 +58,14 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom Bar */}
-                <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+                <div className="footer-bottom">
                     <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem' }}>
                             &copy; {new Date().getFullYear()} Coded House. CodeX is a product of Coded House. All rights reserved. <span style={{ opacity: 0.5, marginLeft: '8px' }}>v1.0.0 (Beta)</span>
                         </p>
                     </div>
 
-                    <div style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                    <div className="footer-info-group">
                         <span style={{ display: 'flex', items: 'center', gap: '6px' }}>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                             +971 50 453 6965
@@ -76,6 +81,38 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+
+            <style>{`
+                .footer-bottom {
+                    padding-top: 2rem;
+                    border-top: 1px solid rgba(255,255,255,0.05);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                }
+                .footer-info-group {
+                    color: var(--color-text-secondary);
+                    font-size: 0.85rem;
+                    display: flex;
+                    gap: 1.5rem;
+                    align-items: center;
+                }
+
+                @media (max-width: 768px) {
+                    .footer-bottom {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 2rem;
+                    }
+                    .footer-info-group {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 1rem;
+                    }
+                }
+            `}</style>
         </footer>
     );
 };
