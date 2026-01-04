@@ -56,7 +56,7 @@ const Footer = () => {
                 <div style={{ paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                     <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
                         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem' }}>
-                            &copy; {new Date().getFullYear()} Coded House. CodeX is a product of Coded House. All rights reserved.
+                            &copy; {new Date().getFullYear()} Coded House. CodeX is a product of Coded House. All rights reserved. <span style={{ opacity: 0.5, marginLeft: '8px' }}>v1.0.0 (Beta)</span>
                         </p>
                     </div>
 

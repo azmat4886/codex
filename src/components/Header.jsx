@@ -36,7 +36,7 @@ const Header = ({ currentView, isScrolled }) => {
                 zIndex: 1000,
                 transition: 'all 0.3s ease',
                 backgroundColor: isMenuOpen ? '#020617' : (isScrolled ? 'rgba(2, 6, 23, 0.95)' : 'transparent'),
-                backdropFilter: isScrolled || isMenuOpen ? 'blur(12px)' : 'none',
+                backdropFilter: isScrolled && !isMenuOpen ? 'blur(12px)' : 'none',
                 borderBottom: isScrolled || isMenuOpen ? '1px solid rgba(255, 255, 255, 0.05)' : 'none',
             }}
         >
@@ -115,9 +115,9 @@ const Header = ({ currentView, isScrolled }) => {
                 position: 'fixed',
                 top: 0,
                 left: 0,
-                right: 0,
-                bottom: 0,
-                backgroundColor: '#020617',
+                width: '100vw',
+                height: '100vh',
+                backgroundColor: 'var(--color-bg)',
                 zIndex: 1001,
                 display: 'flex',
                 flexDirection: 'column',
