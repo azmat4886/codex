@@ -33,7 +33,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 style={{ fontSize: '1.1rem', marginBottom: '0.25rem' }}>Call Us</h3>
-                                <a href="tel:+15875663646" style={{ color: 'var(--color-text-primary)', textDecoration: 'none', fontSize: '1.1rem' }}>+1 587 566 3646</a>
+                                <a href="tel:+971504536965" style={{ color: 'var(--color-text-primary)', textDecoration: 'none', fontSize: '1.1rem' }}>+971 50 453 6965</a>
                             </div>
                         </div>
 
