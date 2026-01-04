@@ -1,0 +1,170 @@
+
+
+const teamMembers = [
+    {
+        name: "Chas Sheikh",
+        role: "Chief Executive Officer",
+        image: "/assets/team/chas_sheikh.jpeg",
+        bio: "Leading CodeX's strategic vision and institutional partnerships."
+    },
+    {
+        name: "Frantz Maignan",
+        role: "Chief Operating Officer",
+        image: "/assets/team/frantz_maignan.jpeg",
+        bio: "Overseeing global operations and execution strategy."
+    },
+    {
+        name: "Jose Quesnel",
+        role: "Chief Financial Officer",
+        image: "/assets/team/jose_quesnel.jpeg",
+        bio: "Managing financial planning, risk, and capital allocation."
+    },
+    {
+        name: "Usman Khan",
+        role: "CTO · Lead Architect & Security",
+        image: "/assets/team/usman_khan.jpeg",
+        bio: "Architecting the secure hybrid blockchain infrastructure."
+    },
+    {
+        name: "Azmat Ullah",
+        role: "Head of Web & Mobile Engineering",
+        image: "/assets/team/azmat_ullah.jpeg",
+        bio: "Leading frontend delivery and application development."
+    },
+    {
+        name: "Jeremy Joseph",
+        role: "Data Administrator",
+        image: "/assets/team/jeremy_joseph.jpeg",
+        bio: "Ensuring data integrity and system administration."
+    },
+    {
+        name: "Abdul Samad",
+        role: "Blockchain Developer",
+        image: "/assets/team/abdul_samad.jpeg",
+        bio: "Specializing in smart contract development and protocol integration."
+    },
+    {
+        name: "Darshan Patel",
+        role: "Full-Stack Developer",
+        image: "/assets/team/darshan_patel.jpeg",
+        bio: "Building robust backend systems and user interfaces."
+    },
+    {
+        name: "Nader Maaloui",
+        role: "Software Analyst",
+        image: "/assets/team/nader_maaloui.jpeg",
+        bio: "Analyzing system requirements and optimizing technical solutions."
+    }
+];
+
+const Company = () => {
+    return (
+        <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: 'var(--color-bg)' }}>
+            {/* Hero */}
+            <div style={{ padding: '6rem 0', textAlign: 'center', background: 'radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 70%)' }}>
+                <div className="container">
+                    <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>Team & <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--color-accent-blue)' }}>Engineering</span></h1>
+                    <p style={{ color: 'var(--color-text-secondary)', maxWidth: '800px', margin: '0 auto', fontSize: '1.25rem', lineHeight: 1.6 }}>
+                        CodeX is designed and operated by <strong>Coded House</strong> — combining protocol engineering, backend systems, enterprise delivery and product strategy for institutional clients.
+                    </p>
+                </div>
+            </div>
+
+            <div className="container">
+                {/* About Coded House */}
+                <section className="glass-card about-section" style={{ padding: '3rem', marginBottom: '5rem' }}>
+                    <div style={{ flex: 1 }}>
+                        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>About Coded House</h2>
+                        <p style={{ color: 'var(--color-text-secondary)', marginBottom: '1.5rem', lineHeight: 1.6 }}>
+                            Coded House is a software and infrastructure studio focused on institutional-grade digital asset products. The team works across protocol engineering, security, DevOps and UI/UX to deliver complete solutions — from private ledger networks to public-chain integrations.
+                        </p>
+                        <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
+                            CodeX is one of Coded House’s flagship products, combining hybrid blockchain infrastructure, compliance tooling and banking integrations into a single institutional platform.
+                        </p>
+                    </div>
+                    {/* Visual element or logo placeholder */}
+                    <div className="about-logo" style={{
+                        background: '#fff',
+                        padding: '2rem',
+                        borderRadius: '12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)'
+                    }}>
+                        <img
+                            src="/assets/logos/coded_house_horizontal_logo.jpg"
+                            alt="Coded House"
+                            style={{ maxWidth: '250px', height: 'auto', display: 'block' }}
+                        />
+                    </div>
+                </section>
+
+                {/* Team Section */}
+                <section style={{ paddingBottom: '4rem' }}>
+                    <div style={{ marginBottom: '3rem' }}>
+                        <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Leadership & Engineering</h2>
+                        <p style={{ color: 'var(--color-text-secondary)' }}>The multidisciplinary team behind the platform.</p>
+                    </div>
+
+                    <div className="team-grid" style={{ gap: '2rem' }}>
+                        {teamMembers.map((member, index) => (
+                            <div key={index} className="glass-card" style={{ padding: '0', overflow: 'hidden', transition: 'transform 0.3s ease' }}>
+                                <div style={{ height: '320px', width: '100%', overflow: 'hidden', backgroundColor: '#1e293b', position: 'relative' }}>
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.style.display = 'none';
+                                            e.target.nextSibling.style.display = 'flex';
+                                        }}
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', transition: 'transform 0.4s ease' }}
+                                        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+                                        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                                    />
+                                    <div style={{
+                                        display: 'none',
+                                        width: '100%',
+                                        height: '100%',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        background: 'linear-gradient(45deg, #0f172a, #1e293b)',
+                                        color: 'var(--color-text-secondary)',
+                                        fontSize: '3rem',
+                                        fontFamily: 'var(--font-serif)'
+                                    }}>
+                                        {member.name.charAt(0)}
+                                    </div>
+                                </div>
+                                <div style={{ padding: '1.5rem' }}>
+                                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{member.name}</h3>
+                                    <div style={{ color: 'var(--color-accent-blue)', fontSize: '0.9rem', marginBottom: '0.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{member.role}</div>
+                                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                                        {member.bio}
+                                    </p>
+
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+                <style>{`
+                    .about-section { display: flex; flex-direction: column; gap: 2rem; align-items: center; padding: 1.5rem !important; margin-bottom: 3rem !important; }
+                    .about-logo { width: 100%; display: flex; justify-content: center; }
+                    .team-grid { display: grid; grid-template-columns: 1fr; }
+                    .company-container { padding-left: 1rem; padding-right: 1rem; }
+                    
+                    @media (min-width: 768px) {
+                        .about-section { flex-direction: row; gap: 3rem; padding: 3rem !important; margin-bottom: 5rem !important; }
+                        .about-logo { width: auto; }
+                        .team-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+                        .company-container { padding-left: 0; padding-right: 0; }
+                    }
+                `}</style>
+            </div>
+        </div>
+    );
+};
+
+export default Company;
