@@ -8,16 +8,16 @@ const teamMembers = [
         bio: "Leading CodeX's strategic vision and institutional partnerships."
     },
     {
-        name: "Frantz Maignan",
+        name: "Jushua Thomas",
         role: "Chief Operating Officer",
-        image: "/assets/team/frantz_maignan.jpeg",
-        bio: "Overseeing global operations and execution strategy."
+        image: "/assets/team/jushua_thomas.jpeg",
+        bio: "Driving operational excellence and global business strategy."
     },
     {
-        name: "Jose Quesnel",
+        name: "Narayan Binkkhet",
         role: "Chief Financial Officer",
-        image: "/assets/team/jose_quesnel.jpeg",
-        bio: "Managing financial planning, risk, and capital allocation."
+        image: "/assets/team/narayan_binkkhet.jpeg",
+        bio: "Overseeing financial strategy, capital planning, and fiscal governance."
     },
     {
         name: "Usman Khan",
@@ -32,28 +32,34 @@ const teamMembers = [
         bio: "Leading frontend delivery and application development."
     },
     {
-        name: "Jeremy Joseph",
-        role: "Data Administrator",
-        image: "/assets/team/jeremy_joseph.jpeg",
-        bio: "Ensuring data integrity and system administration."
-    },
-    {
         name: "Abdul Samad",
         role: "Blockchain Developer",
         image: "/assets/team/abdul_samad.jpeg",
         bio: "Specializing in smart contract development and protocol integration."
     },
     {
-        name: "Darshan Patel",
-        role: "Full-Stack Developer",
-        image: "/assets/team/darshan_patel.jpeg",
-        bio: "Building robust backend systems and user interfaces."
+        name: "Prabhu Pari Subarmanian",
+        role: "Developer",
+        image: "/assets/team/prabhu_pari_subarmanian.jpeg",
+        bio: "Building robust systems and enterprise integrations."
     },
     {
-        name: "Nader Maaloui",
-        role: "Software Analyst",
-        image: "/assets/team/nader_maaloui.jpeg",
-        bio: "Analyzing system requirements and optimizing technical solutions."
+        name: "Isaam Katam",
+        role: "Developer",
+        image: "/assets/team/isaam_katam.jpeg",
+        bio: "Contributing to core platform development and optimization."
+    },
+    {
+        name: "Pritto A",
+        role: "Developer",
+        image: "/assets/team/pritto_a.jpeg",
+        bio: "Developing scalable solutions for institutional clients."
+    },
+    {
+        name: "Manikandan Kannan",
+        role: "Developer",
+        image: "/assets/team/manikandan_kannan.jpeg",
+        bio: "Focusing on full-stack implementation and system performance."
     }
 ];
 

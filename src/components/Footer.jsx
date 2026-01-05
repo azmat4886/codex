@@ -14,13 +14,9 @@ const Footer = () => {
                     <div style={{ maxWidth: '300px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
                             <img
-                                src="/assets/logos/coded_house_png_vertical.png"
+                                src="/assets/logos/codex_round_logo.jpeg"
                                 alt="CodeX"
-                                style={{
-                                    height: '50px',
-                                    width: 'auto',
-                                    filter: 'sepia(100%) saturate(1000%) hue-rotate(5deg) brightness(1.1)'
-                                }}
+                                style={{ width: '24px', height: '24px', borderRadius: '50%' }}
                             />
                             <span style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: 'var(--font-serif)' }}>CodeX</span>
                         </div>
@@ -68,7 +64,7 @@ const Footer = () => {
                     <div className="footer-info-group">
                         <span style={{ display: 'flex', items: 'center', gap: '6px' }}>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                            +971 50 453 6965
+                            +971 50 453 6065
                         </span>
                         <span style={{ display: 'flex', items: 'center', gap: '6px' }}>
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
