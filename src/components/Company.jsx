@@ -96,13 +96,13 @@ const Company = () => {
                         padding: '1rem'
                     }}>
                         <img
-                            src="/assets/logos/coded_house_png_vertical.png"
+                            src="/assets/logos/coded_house_square.jpeg"
                             alt="Coded House"
                             className="company-logo-img"
                             style={{
                                 width: 'auto',
                                 display: 'block',
-                                filter: 'sepia(100%) saturate(1000%) hue-rotate(5deg) brightness(1.1)'
+                                borderRadius: '20px'
                             }}
                         />
                     </div>
@@ -162,7 +162,7 @@ const Company = () => {
                     .about-logo { width: 100%; display: flex; justify-content: center; }
                     .team-grid { display: grid; grid-template-columns: 1fr; }
                     .company-container { padding-left: 1rem; padding-right: 1rem; }
-                    .company-logo-img { height: 200px; }
+                    .company-logo-img { height: 150px; }
                     
                     @media (min-width: 768px) {
                         .about-section { flex-direction: row; gap: 3rem; padding: 3rem !important; margin-bottom: 5rem !important; }
@@ -174,10 +174,10 @@ const Company = () => {
                     @media (max-width: 767px) {
                         .about-section {
                             background: #0f172a !important;
-                            padding: 2.5rem !important;
+                            padding: 2.5rem 1.25rem !important;
                         }
                         .company-logo-img {
-                            height: 120px;
+                            height: 100px;
                         }
                     }
                 `}</style>
