@@ -11,6 +11,8 @@ import Whitepaper from './components/Whitepaper';
 import Contact from './components/Contact';
 import Privacy from './components/Privacy';
 import Disclaimer from './components/Disclaimer';
+import CodexToken from './components/CodexToken';
+import Home from './components/Home';
 
 function App() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -34,14 +36,10 @@ function App() {
                 currentView={location.pathname}
                 isScrolled={isScrolled}
             />
-            <main style={{ paddingTop: 'var(--header-height)' }}>
+            <main>
                 <Routes>
-                    <Route path="/" element={
-                        <>
-                            <Hero />
-                            <Features />
-                        </>
-                    } />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/codextoken" element={<CodexToken />} />
                     <Route path="/architecture" element={<Architecture />} />
                     <Route path="/usecases" element={<UseCases />} />
                     <Route path="/team" element={<Company />} />

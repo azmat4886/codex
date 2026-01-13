@@ -23,19 +23,22 @@ const teamMembers = [
         name: "Usman Khan",
         role: "CTO · Lead Architect & Security",
         image: "/assets/team/usman_khan.jpeg",
-        bio: "Architecting the secure hybrid blockchain infrastructure."
+        bio: "Architecting the secure hybrid blockchain infrastructure.",
+        email: "usman_khan@codedhouse.com"
     },
     {
         name: "Azmat Ullah",
         role: "Head of Web & Mobile Engineering",
         image: "/assets/team/azmat_ullah.jpeg",
-        bio: "Leading frontend delivery and application development."
+        bio: "Leading frontend delivery and application development.",
+        email: "azmat_ullah@codedhouse.com"
     },
     {
         name: "Abdul Samad",
         role: "Blockchain Developer",
         image: "/assets/team/abdul_samad.jpeg",
-        bio: "Specializing in smart contract development and protocol integration."
+        bio: "Specializing in smart contract development and protocol integration.",
+        email: "abdul_samad@codedhouse.com"
     },
     {
         name: "Prabhu Pari Subarmanian",
@@ -151,6 +154,27 @@ const Company = () => {
                                     <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                                         {member.bio}
                                     </p>
+
+                                    {member.email && (
+                                        <div style={{ marginBottom: '1rem' }}>
+                                            <a
+                                                href={`mailto:${member.email}`}
+                                                style={{
+                                                    display: 'inline-flex',
+                                                    alignItems: 'center',
+                                                    color: 'var(--color-accent-blue)',
+                                                    fontSize: '0.85rem',
+                                                    textDecoration: 'none',
+                                                    opacity: 0.9,
+                                                    transition: 'opacity 0.2s'
+                                                }}
+                                                onMouseOver={(e) => e.target.style.opacity = '1'}
+                                                onMouseOut={(e) => e.target.style.opacity = '0.9'}
+                                            >
+                                                {member.email}
+                                            </a>
+                                        </div>
+                                    )}
 
                                 </div>
                             </div>

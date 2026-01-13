@@ -17,13 +17,7 @@ const Header = ({ currentView, isScrolled }) => {
         return false;
     };
 
-    const navItems = [
-        { label: 'HOME', path: '/' },
-        { label: 'ARCHITECTURE', path: '/architecture' },
-        { label: 'USE CASES', path: '/usecases' },
-        { label: 'TEAM', path: '/team' },
-        { label: 'CONTACT', path: '/contact' },
-    ];
+
 
     return (
         <header
@@ -47,8 +41,8 @@ const Header = ({ currentView, isScrolled }) => {
                     style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer', zIndex: 1002 }}
                 >
                     <img
-                        src="/assets/logos/codex_round_logo.jpeg"
-                        alt="CodeX Logo"
+                        src="/assets/logos/coded_house_square.jpeg"
+                        alt="Coded House"
                         style={{
                             width: '40px',
                             height: '40px',
@@ -59,18 +53,23 @@ const Header = ({ currentView, isScrolled }) => {
                     />
                     <span style={{
                         fontFamily: 'var(--font-serif)',
-                        fontSize: '1.5rem',
+                        fontSize: '1.25rem',
                         fontWeight: 700,
                         letterSpacing: '0.02em',
                         color: 'var(--color-text-primary)'
                     }}>
-                        CodeX
+                        Coded House
                     </span>
                 </div>
 
                 {/* Desktop Navigation */}
+                {/* Desktop Navigation */}
                 <nav className="desktop-nav" style={{ display: 'none', gap: '2rem', position: 'relative', zIndex: 1002 }}>
-                    {navItems.map((item) => (
+                    {[
+                        { label: 'HOME', path: '/' },
+                        { label: 'CODEX TOKEN', path: '/codextoken' },
+                        { label: 'CONTACT', path: '/contact' },
+                    ].map((item) => (
                         <button
                             key={item.label}
                             onClick={() => handleNavigate(item.path)}
@@ -129,7 +128,11 @@ const Header = ({ currentView, isScrolled }) => {
                 pointerEvents: isMenuOpen ? 'all' : 'none',
                 padding: '2rem'
             }}>
-                {navItems.map((item) => (
+                {[
+                    { label: 'HOME', path: '/' },
+                    { label: 'CODEX TOKEN', path: '/codextoken' },
+                    { label: 'CONTACT', path: '/contact' },
+                ].map((item) => (
                     <button
                         key={item.label}
                         onClick={() => handleNavigate(item.path)}
@@ -161,7 +164,7 @@ const Header = ({ currentView, isScrolled }) => {
                     .mobile-toggle { display: block !important; }
                 }
             `}</style>
-        </header>
+        </header >
     );
 };
 
