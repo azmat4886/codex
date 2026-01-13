@@ -30,7 +30,7 @@ const Footer = () => {
                         <h4 style={{ marginBottom: '1.5rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)' }}>Protocol</h4>
                         <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             <li><button onClick={() => navigate('/whitepaper')} style={{ background: 'none', border: 'none', textAlign: 'left', color: 'var(--color-text-primary)', fontSize: '0.95rem', cursor: 'pointer', fontFamily: 'inherit', padding: 0 }}>Whitepaper</button></li>
-                            <li><a href="https://etherscan.io/address/0xb74e0669eCD258e7B641A688b4a3Be8434cf63c4" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-primary)', fontSize: '0.95rem' }}>Smart Contracts</a></li>
+                            <li><a href="https://etherscan.io/address/0x51a9098e1cdc884886233f706669d0ac6c198f40" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-text-primary)', fontSize: '0.95rem' }}>Smart Contract</a></li>
                         </ul>
                     </div>
 

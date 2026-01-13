@@ -1,7 +1,45 @@
-
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const NetworkSnapshot = () => {
+    const [totalSupply, setTotalSupply] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchSupply = async () => {
+            try {
+                // Using the specific contract address provided
+                const contractAddress = '0x51a9098e1cdc884886233f706669d0ac6c198f40';
+                const apiKey = import.meta.env.VITE_ETHERSCAN_API_KEY;
+
+                if (!apiKey) {
+                    console.warn('VITE_ETHERSCAN_API_KEY not set. Env keys:', Object.keys(import.meta.env));
+                    setLoading(false);
+                    return;
+                }
+
+                const response = await fetch(`https://api.etherscan.io/v2/api?chainid=1&module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${apiKey}`);
+                const data = await response.json();
+
+                if (data.status === '1' && data.result) {
+                    // Assuming 18 decimals, formatted to millions/billions
+                    const rawSupply = parseFloat(data.result) / 1e18;
+                    const formattedSupply = new Intl.NumberFormat('en-US', {
+                        notation: "compact",
+                        maximumFractionDigits: 1
+                    }).format(rawSupply);
+                    setTotalSupply(formattedSupply);
+                }
+            } catch (error) {
+                console.error('Error fetching token supply:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchSupply();
+    }, []);
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -54,10 +92,12 @@ const NetworkSnapshot = () => {
                     <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>€913M</div>
                 </div>
 
-                {/* Stat 3 */}
+                {/* Stat 3 - DYNAMIC */}
                 <div style={{ padding: '1.5rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                    <div style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem' }}>Market Cap</div>
-                    <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>$2B+</div>
+                    <div style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem' }}>Total Supply</div>
+                    <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>
+                        {loading ? '...' : (totalSupply ? `${totalSupply} CDX` : 'N/A')}
+                    </div>
                 </div>
 
                 {/* Stat 4 */}
