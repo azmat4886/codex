@@ -1,5 +1,6 @@
 
-import { Landmark, Banknote, Building2, PieChart, Briefcase, Smartphone } from 'lucide-react';
+import { Landmark, Banknote, Building2, PieChart, Briefcase, Smartphone, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const cases = [
     {
@@ -56,10 +57,28 @@ const cases = [
 ];
 
 const UseCases = () => {
+    const navigate = useNavigate();
     return (
         <div style={{ paddingTop: '100px', paddingBottom: '4rem', minHeight: '100vh', backgroundColor: 'var(--color-bg)' }}>
             <div className="container">
                 <div style={{ maxWidth: '800px', marginBottom: '4rem' }}>
+                    <button
+                        onClick={() => navigate(-1)}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'var(--color-text-secondary)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            cursor: 'pointer',
+                            marginBottom: '2rem',
+                            fontSize: '1rem',
+                            padding: 0
+                        }}
+                    >
+                        <ArrowLeft size={20} /> Back
+                    </button>
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>Institutional Use Cases</h1>
                     <p style={{ fontSize: '1.25rem', color: 'var(--color-text-secondary)', lineHeight: 1.6 }}>
                         CodeX is designed for real, production-grade banking and capital markets workflows. Below are example use cases that combine the CodeX chain, CDX token and traditional banking infrastructure engineered by <strong>Coded House</strong>.

@@ -14,14 +14,14 @@ const Footer = () => {
                     <div style={{ maxWidth: '300px' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
                             <img
-                                src="/assets/logos/codex_round_logo.jpeg"
-                                alt="CodeX"
-                                style={{ width: '24px', height: '24px', borderRadius: '50%' }}
+                                src="/assets/logos/coded_house_square.jpeg"
+                                alt="Coded House"
+                                style={{ width: '32px', height: '32px', borderRadius: '50%', objectFit: 'cover' }}
                             />
-                            <span style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: 'var(--font-serif)' }}>CodeX</span>
+                            <span style={{ fontSize: '1.25rem', fontWeight: 700, fontFamily: 'var(--font-serif)' }}>Coded House</span>
                         </div>
                         <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                            The premier institutional platform for transparent, compliant, and secure real-world asset tokenization.
+                            Leading the digital transformation of finance through secure, compliant, and scalable blockchain infrastructure.
                         </p>
                     </div>
 

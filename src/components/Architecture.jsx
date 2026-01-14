@@ -1,11 +1,30 @@
 
-import { ArrowDown, Globe, Server, Shield, Activity, Database, Lock } from 'lucide-react';
+import { ArrowDown, Globe, Server, Shield, Activity, Database, Lock, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Architecture = () => {
+    const navigate = useNavigate();
     return (
         <div style={{ paddingTop: '100px', paddingBottom: '4rem', minHeight: '100vh', backgroundColor: 'var(--color-bg)' }}>
             <div className="container">
                 <div style={{ maxWidth: '900px', margin: '0 auto', marginBottom: '5rem' }}>
+                    <button
+                        onClick={() => navigate(-1)}
+                        style={{
+                            background: 'none',
+                            border: 'none',
+                            color: 'var(--color-text-secondary)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            cursor: 'pointer',
+                            marginBottom: '2rem',
+                            fontSize: '1rem',
+                            padding: 0
+                        }}
+                    >
+                        <ArrowLeft size={20} /> Back
+                    </button>
                     <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem' }}>CodeX System Architecture</h1>
                     <p style={{ fontSize: '1.25rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '3rem' }}>
                         CodeX uses a layered hybrid model: a public blockchain layer for transparency and interoperability, a

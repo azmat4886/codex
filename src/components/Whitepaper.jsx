@@ -8,7 +8,7 @@ const Whitepaper = () => {
         <div style={{ paddingTop: '120px', paddingBottom: '6rem', minHeight: '100vh', backgroundColor: 'var(--color-bg)' }}>
             <div className="container" style={{ maxWidth: '800px' }}>
                 <button
-                    onClick={() => navigate('/')}
+                    onClick={() => navigate(-1)}
                     style={{
                         background: 'none',
                         border: 'none',
@@ -21,7 +21,7 @@ const Whitepaper = () => {
                         fontSize: '1rem'
                     }}
                 >
-                    <ArrowLeft size={20} /> Back to Home
+                    <ArrowLeft size={20} /> Back
                 </button>
 
                 <div className="paper-content">
