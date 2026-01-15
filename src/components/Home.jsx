@@ -281,13 +281,14 @@ const Home = () => {
                                             <a
                                                 href={`mailto:${member.email}`}
                                                 style={{
-                                                    display: 'inline-flex',
-                                                    alignItems: 'center',
+                                                    display: 'inline-block',
                                                     color: 'var(--color-accent-blue)',
                                                     fontSize: '0.85rem',
                                                     textDecoration: 'none',
                                                     opacity: 0.9,
-                                                    transition: 'opacity 0.2s'
+                                                    transition: 'opacity 0.2s',
+                                                    wordBreak: 'break-all',
+                                                    maxWidth: '100%'
                                                 }}
                                                 onMouseOver={(e) => e.target.style.opacity = '1'}
                                                 onMouseOut={(e) => e.target.style.opacity = '0.9'}
