@@ -127,8 +127,8 @@ const Company = () => {
 
                     <div className="team-grid" style={{ gap: '2rem' }}>
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="glass-card" style={{ padding: '0', overflow: 'hidden', transition: 'transform 0.3s ease' }}>
-                                <div style={{ height: '320px', width: '100%', overflow: 'hidden', backgroundColor: '#1e293b', position: 'relative' }}>
+                            <div key={index} className="glass-card" style={{ padding: '0', overflow: 'hidden', transition: 'transform 0.3s ease', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                <div style={{ height: '320px', width: '100%', overflow: 'hidden', backgroundColor: '#1e293b', position: 'relative', flexShrink: 0 }}>
                                     <img
                                         src={member.image}
                                         alt={member.name}
@@ -155,15 +155,15 @@ const Company = () => {
                                         {member.name.charAt(0)}
                                     </div>
                                 </div>
-                                <div style={{ padding: '1.5rem' }}>
+                                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
                                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{member.name}</h3>
                                     <div style={{ color: 'var(--color-accent-blue)', fontSize: '0.9rem', marginBottom: '0.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{member.role}</div>
-                                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem', flexGrow: 1 }}>
                                         {member.bio}
                                     </p>
 
                                     {member.email && (
-                                        <div style={{ marginBottom: '1rem' }}>
+                                        <div style={{ marginTop: 'auto' }}>
                                             <a
                                                 href={`mailto:${member.email}`}
                                                 style={{

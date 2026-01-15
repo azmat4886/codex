@@ -7,19 +7,22 @@ const teamMembers = [
         name: "Chas Sheikh",
         role: "Chief Executive Officer",
         image: "/assets/team/chas_sheikh.jpeg",
-        bio: "Leading CodeX's strategic vision and institutional partnerships."
+        bio: "Leading CodeX's strategic vision and institutional partnerships.",
+        email: "chas_shaikh@codedhouse.com"
     },
     {
         name: "Jushua Thomas",
         role: "Chief Operating Officer",
         image: "/assets/team/jushua_thomas.jpeg",
-        bio: "Driving operational excellence and global business strategy."
+        bio: "Driving operational excellence and global business strategy.",
+        email: "jushua_thomas@codedhouse.com"
     },
     {
         name: "Narayan Binkkhet",
         role: "Chief Financial Officer",
         image: "/assets/team/narayan_binkkhet.jpeg",
-        bio: "Overseeing financial strategy, capital planning, and fiscal governance."
+        bio: "Overseeing financial strategy, capital planning, and fiscal governance.",
+        email: "narayan_binkkhet@codedhouse.com"
     },
     {
         name: "Usman Khan",
@@ -46,25 +49,29 @@ const teamMembers = [
         name: "Prabhu Pari Subarmanian",
         role: "Developer",
         image: "/assets/team/prabhu_pari_subarmanian.jpeg",
-        bio: "Building robust systems and enterprise integrations."
+        bio: "Building robust systems and enterprise integrations.",
+        email: "prabhu_pari_subarmanian@codedhouse.com"
     },
     {
         name: "Isaam Katam",
         role: "Developer",
         image: "/assets/team/isaam_katam.jpeg",
-        bio: "Contributing to core platform development and optimization."
+        bio: "Contributing to core platform development and optimization.",
+        email: "isaam_katam@codedhouse.com"
     },
     {
         name: "Pritto A",
         role: "Developer",
         image: "/assets/team/pritto_a.jpeg",
-        bio: "Developing scalable solutions for institutional clients."
+        bio: "Developing scalable solutions for institutional clients.",
+        email: "pritto_a@codedhouse.com"
     },
     {
         name: "Manikandan Kannan",
         role: "Developer",
         image: "/assets/team/manikandan_kannan.jpeg",
-        bio: "Focusing on full-stack implementation and system performance."
+        bio: "Focusing on full-stack implementation and system performance.",
+        email: "manikandan_kannan@codedhouse.com"
     }
 ];
 
@@ -234,8 +241,8 @@ const Home = () => {
 
                     <div className="team-grid" style={{ gap: '2rem' }}>
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="glass-card" style={{ padding: '0', overflow: 'hidden', transition: 'transform 0.3s ease' }}>
-                                <div style={{ height: '320px', width: '100%', overflow: 'hidden', backgroundColor: '#1e293b', position: 'relative' }}>
+                            <div key={index} className="glass-card" style={{ padding: '0', overflow: 'hidden', transition: 'transform 0.3s ease', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                                <div style={{ height: '320px', width: '100%', overflow: 'hidden', backgroundColor: '#1e293b', position: 'relative', flexShrink: 0 }}>
                                     <img
                                         src={member.image}
                                         alt={member.name}
@@ -262,15 +269,15 @@ const Home = () => {
                                         {member.name.charAt(0)}
                                     </div>
                                 </div>
-                                <div style={{ padding: '1.5rem' }}>
+                                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
                                     <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{member.name}</h3>
                                     <div style={{ color: 'var(--color-accent-blue)', fontSize: '0.9rem', marginBottom: '0.5rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{member.role}</div>
-                                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                                    <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '1.5rem', flexGrow: 1 }}>
                                         {member.bio}
                                     </p>
 
                                     {member.email && (
-                                        <div style={{ marginBottom: '1rem' }}>
+                                        <div style={{ marginTop: 'auto' }}>
                                             <a
                                                 href={`mailto:${member.email}`}
                                                 style={{
