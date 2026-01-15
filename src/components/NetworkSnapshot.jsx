@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 const NetworkSnapshot = () => {
     const [totalSupply, setTotalSupply] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [networkStatus, setNetworkStatus] = useState('0'); // Default to 0 (Connecting/Unknown)
 
     useEffect(() => {
         const fetchSupply = async () => {
@@ -13,13 +14,17 @@ const NetworkSnapshot = () => {
                 const apiKey = import.meta.env.VITE_ETHERSCAN_API_KEY;
 
                 if (!apiKey) {
-                    console.warn('VITE_ETHERSCAN_API_KEY not set. Env keys:', Object.keys(import.meta.env));
+                    console.warn('VITE_ETHERSCAN_API_KEY not set.');
                     setLoading(false);
                     return;
                 }
 
-                const response = await fetch(`https://api.etherscan.io/v2/api?chainid=1&module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${apiKey}`);
+                const response = await fetch(`https://api.etherscan.io/v2/api?chainid=11155111&module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${apiKey}`);
                 const data = await response.json();
+
+                if (data.status) {
+                    setNetworkStatus(data.status);
+                }
 
                 if (data.status === '1' && data.result) {
                     // Assuming 18 decimals, formatted to millions/billions
@@ -32,6 +37,7 @@ const NetworkSnapshot = () => {
                 }
             } catch (error) {
                 console.error('Error fetching token supply:', error);
+                setNetworkStatus('0');
             } finally {
                 setLoading(false);
             }
@@ -39,6 +45,8 @@ const NetworkSnapshot = () => {
 
         fetchSupply();
     }, []);
+
+    const isHealthy = networkStatus === '1';
 
     return (
         <motion.div
@@ -67,30 +75,20 @@ const NetworkSnapshot = () => {
                     alignItems: 'center',
                     gap: '8px',
                     padding: '6px 16px',
-                    background: 'rgba(16, 185, 129, 0.15)',
-                    border: '1px solid rgba(16, 185, 129, 0.3)',
+                    background: isHealthy ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                    border: isHealthy ? '1px solid rgba(16, 185, 129, 0.3)' : '1px solid rgba(239, 68, 68, 0.3)',
                     borderRadius: '20px',
-                    color: '#34d399',
+                    color: isHealthy ? '#34d399' : '#ef4444',
                     fontSize: '0.9rem',
                     fontWeight: 500
                 }}>
-                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#34d399' }} />
-                    Live · Healthy
+                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: isHealthy ? '#34d399' : '#ef4444' }} />
+                    {isHealthy ? 'Live · Healthy' : 'System Degraded'}
                 </div>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
-                {/* Stat 1 */}
-                <div style={{ padding: '1.5rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                    <div style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem' }}>Total Value Settled</div>
-                    <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>€1.9T+</div>
-                </div>
 
-                {/* Stat 2 */}
-                <div style={{ padding: '1.5rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                    <div style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', marginBottom: '0.75rem' }}>Bank Reserves</div>
-                    <div style={{ fontSize: '1.75rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>€913M</div>
-                </div>
 
                 {/* Stat 3 - DYNAMIC */}
                 <div style={{ padding: '1.5rem', background: 'rgba(255, 255, 255, 0.03)', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
