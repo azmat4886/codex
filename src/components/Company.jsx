@@ -5,19 +5,22 @@ const teamMembers = [
         name: "Chas Sheikh",
         role: "Chief Executive Officer",
         image: "/assets/team/chas_sheikh.jpeg",
-        bio: "Leading CodeX's strategic vision and institutional partnerships."
+        bio: "Leading CodeX's strategic vision and institutional partnerships.",
+        email: "chas_shaikh@codedhouse.com"
     },
     {
         name: "Jushua Thomas",
         role: "Chief Operating Officer",
         image: "/assets/team/jushua_thomas.jpeg",
-        bio: "Driving operational excellence and global business strategy."
+        bio: "Driving operational excellence and global business strategy.",
+        email: "jushua_thomas@codedhouse.com"
     },
     {
         name: "Narayan Binkkhet",
         role: "Chief Financial Officer",
         image: "/assets/team/narayan_binkkhet.jpeg",
-        bio: "Overseeing financial strategy, capital planning, and fiscal governance."
+        bio: "Overseeing financial strategy, capital planning, and fiscal governance.",
+        email: "narayan_binkkhet@codedhouse.com"
     },
     {
         name: "Usman Khan",
@@ -44,25 +47,29 @@ const teamMembers = [
         name: "Prabhu Pari Subarmanian",
         role: "Developer",
         image: "/assets/team/prabhu_pari_subarmanian.jpeg",
-        bio: "Building robust systems and enterprise integrations."
+        bio: "Building robust systems and enterprise integrations.",
+        email: "prabhu_pari_subarmanian@codedhouse.com"
     },
     {
         name: "Isaam Katam",
         role: "Developer",
         image: "/assets/team/isaam_katam.jpeg",
-        bio: "Contributing to core platform development and optimization."
+        bio: "Contributing to core platform development and optimization.",
+        email: "isaam_katam@codedhouse.com"
     },
     {
         name: "Pritto A",
         role: "Developer",
         image: "/assets/team/pritto_a.jpeg",
-        bio: "Developing scalable solutions for institutional clients."
+        bio: "Developing scalable solutions for institutional clients.",
+        email: "pritto_a@codedhouse.com"
     },
     {
         name: "Manikandan Kannan",
         role: "Developer",
         image: "/assets/team/manikandan_kannan.jpeg",
-        bio: "Focusing on full-stack implementation and system performance."
+        bio: "Focusing on full-stack implementation and system performance.",
+        email: "manikandan_kannan@codedhouse.com"
     }
 ];
 
